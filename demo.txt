@@ -1,0 +1,99 @@
+Pri spusteni aplikace oznami bud:
+
+Database created: assets.txt
+
+nebo 
+
+Database already exists.
+
+Dale ma vypsat:
+
+Portfolio ready to use.
+
+Pote jiz muzeme zacit s aplikaci pracovat. 
+
+Podivejme se na nase portfolio:
+
+show assets // prikaz
+Crypto //kategorie assetu
+Crypto Net North: 0 //celkova hodnota assetu daneho typu
+Total Net worth: 0 //celkova hodnota portfolia pres vsechny typy assetu
+
+Pridejme 1 bitcoin:
+
+add c bitcoin 1 //prikaz
+New asset added. //pockame na hlasku, ze se zdarilo
+
+Podivejme se ted na portfolio:
+
+sh as //zkratka pro show assets  
+Crypto
+bitcoin.......................37898 1 37898 //obsahuje 1 bitcoin s aktualni hodnotou
+Crypto Net North: 37898
+Total Net worth: 37898
+
+Pridejme 10 ethereum:
+
+add c etthereum 10 // udelali jsme chybu v nazvu
+Asset not supported. //chybova hlaska, asset neni podporovany
+
+add c ethereum 10 //jiz spravne
+New asset added. //asset pridany
+
+Pridejme jeste 150.4 litecoin
+
+add c litecoin 150.4
+New asset added.
+
+A podivejme se na portfolio
+
+sh as
+Crypto
+bitcoin.......................37911 1 37911
+ethereum......................2653.66 10 26536.60
+litecoin......................108.79 150.4 16362.016
+Crypto Net North: 80809.616
+Total Net worth: 80809.616
+
+Prodali jsme 5x ethereum:
+
+add c ethereum -5
+Added to existing asset.
+
+sh as
+Crypto
+bitcoin.......................37911 1 37911
+ethereum......................2654.17 5 13270.85 //ethereum smazane
+litecoin......................108.83 150.4 16368.032
+Crypto Net North: 67549.882
+Total Net worth: 67549.882
+
+Prodali jsme veskery bitcoin:
+
+remove c bitcoin
+Asset removed.
+
+sh as
+Crypto
+ethereum......................2653.71 5 13268.55
+litecoin......................108.83 150.4 16368.032
+Crypto Net North: 29636.582
+Total Net worth: 29636.582
+
+
+Muzeme vypsat jen hodnotu portfolia:
+
+networth
+29647.11
+
+nw c //jen hodnota kryptomen
+29647.11
+
+nw s
+Unknown asset type. //akcie (stock) zatim nepodporuji
+
+Program ukoncime:
+
+exit
+
+Aplikace si pri dalsim spusteni bude ulozena data pamatovat.

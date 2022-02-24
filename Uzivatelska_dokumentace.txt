@@ -1,0 +1,72 @@
+Uzivatelska dokumentace:
+Jedna se o jednoduchy portfolio manager, ktery umoznuje evidovat kryptomeny a pocitat jejich aktualni hodnotu.
+
+Program se zkompiluje a spusti pomoci:
+
+mvn compile
+mvn exec:java -Dexec.mainClass="Zapoctak.Main"
+
+
+Mozne prikazy jsou: add, show, remove, networth
+
+prikaz add:
+Prikaz na pridani aktiva do portfolia.
+Ocekavaji se celkem 4 hodnoty oddelene mezerami:
+
+add ‘typ’ ‘jmeno aktiva’ ‘mnozstvi aktiva’
+
+‘typ’ je typ aktiva, v soucasne chvili funguje pouze ‘c’
+‘jmeno aktiva’  je jmeno aktiva
+‘mnozstvi aktiva’ je decimalni hodnota, desetinna cast oddelena teckou
+
+Pokud chci pridat 1 bitcoin so sveho portfolia, zadam:
+
+add c bitcoin 1
+
+Pokud chci zadat desetinu etherea do portfolia, zadam:
+
+add c ethereum 0.1
+
+Pomoci tohoto prikazu se i odebira specifikovatelne mnozstvi. Pokud prodam 0.5 bitcoinu, zadam to pomoci:
+
+add c bitcoin -0.5
+
+
+prikaz show:
+Zobrazeni informaci o portfoliu. 
+
+show assets - ukaze vsechny assety v portfoliu vsech typu.
+
+show assets ‘typ’ - ukaze vsechny assety specifikovaneho typu.
+
+show networth - ukaze celkovou hodnotu portfolia
+
+show networth ‘typ’ - ukaze hodnotu vsech assetu daneho typu
+
+
+prikaz remove:
+Smazani assetu z portfolia - pouziva se jen na smazani celeho assetu, nikoliv jen odecteni casti - na to se pouziva
+predchozi add.
+Ocekavaji se celkem 3 hodnoty oddelene mezerami:
+remove ‘typ’ ‘jmeno aktiva’ 
+
+prikaz networth:
+Ukaze celkovou hodnotu portfolia. Za prikaz lze zadat typ. Jedna se v podstate jen o zkratku show.
+
+networth - cele portfolia
+networth c - hodnota vsech kryptomen
+
+prikaz exit:
+Ukonci program.
+
+
+Zkratky:
+add - a
+networth - nw
+show - sh
+remove - rm
+assets - as, asset
+exit - ex
+
+Lze je zadat na libovolne misto. 
+
